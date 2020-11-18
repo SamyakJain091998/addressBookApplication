@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Address Book</title>
+    <link rel="stylesheet" href="../css/addressBookForm.css" />
+</head>
+
+<body>
+    <header class="header-content header">
+        <div class="logo-content">
+            <img src="../assets/addressbook-512.png" alt="">
+            <div>
+                <span class="emp-text">ADDRESS</span><br>
+                <span class="emp-text emp-payroll">BOOK</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="form-content">
+        <form class="form" action="#" onsubmit="save(); return false">
+            <div class="form-head">
+                ADDRESS BOOK FORM
+            </div>
+            <div class="row-content">
+                <label class="label text" for="name">Name</label>
+                <input class="input" type="text" id="name" name="name" placeholder="Your Name..." required>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="phoneNumber">Phone Number</label>
+                <input class="input" type="number" id="phoneNumber" name="phoneNumber"
+                    placeholder="Your Phone Number..." required>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="notes">Address</label>
+                <textarea id="notes" class="input" name="Notes" placeholder="Your complete address..."
+                    style="height:100px"></textarea>
+            </div>
+            <div class="row-content">
+                <div class="inlineContent">
+                    <label class="label inlineText" for="city">City</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label class="label inlineText" for="state">State</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label class="label inlineText" for="zipCode">Zip Code</label>
+                </div>
+
+                <div id="cityAndState">
+                    <select id="city" name="City">
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Bangalore">Bangalore</option>
+                    </select>
+                    <select id="state" name="State">
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Karnataka">Karnataka</option>
+                    </select>
+                    <input class="input" type="number" id="zipCode" name="zipCode" placeholder="Zip Code..." required>
+                </div>
+            </div>
+            <div class="buttonParent">
+                <div class="submit-reset">
+                    <button type="submit" class="button addButton" id="addButton" onmouseover="">Add</button>
+                    <button type="reset" class="resetButton button">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
