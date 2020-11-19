@@ -69,7 +69,8 @@ class AddressBookData {
 
 const save = () => {
     try {
-        setAddressBookObject();
+        let addressBookData = createaAddressBook();
+        createAndUpdateStorage(addressBookData);
         resetForm();
     } catch (e) {
         alert("Oops!!! There's an error ======> " + e);
@@ -78,17 +79,29 @@ const save = () => {
     }
 }
 
-const setAddressBookObject = () => {
-    let addressBookObj = new AddressBookData();
+const createaAddressBook = () => {
+    let addressBookData = new AddressBookData();
 
-    addressBookObj.name = getInputValueById('#name');
-    addressBookObj.phoneNumber = getInputValueById('#phoneNumber');
-    addressBookObj.address = getInputValueById('#address');
-    addressBookObj.city = getInputValueById('#city');
-    addressBookObj.state = getInputValueById('#state');
-    addressBookObj.zip = getInputValueById('#zipCode');
+    addressBookData.name = getInputValueById('#name');
+    addressBookData.phoneNumber = getInputValueById('#phoneNumber');
+    addressBookData.address = getInputValueById('#address');
+    addressBookData.city = getInputValueById('#city');
+    addressBookData.state = getInputValueById('#state');
+    addressBookData.zip = getInputValueById('#zipCode');
 
-    alert("Object added successfully -----> " + addressBookObj.toString());
+    alert("Object created successfully -----> " + addressBookData.toString());
+    return addressBookData;
+}
+
+function createAndUpdateStorage(addressBookData) {
+    let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
+    if (addressBookList != undefined) {
+        addressBookList.push(addressBookData);
+    } else {
+        addressBookList = [addressBookData];
+    }
+    alert("Local Storage Updated Successfully!\nTotal Addresses : " + addressBookList.length);
+    localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
 }
 
 const getInputValueById = (id) => {

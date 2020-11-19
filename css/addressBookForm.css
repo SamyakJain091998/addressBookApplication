@@ -164,8 +164,7 @@ label{
     display: flex;
     margin-bottom: 10px;
     justify-content: space-between;
-    margin-top: 30px;
-    margin-left: 399px;
+    margin-top: 20px;
 }
 
 .button{
@@ -197,8 +196,18 @@ label{
     color: white;
   }
 
+.cancelButton{
+    text-decoration: none;
+    text-align: center;
+}
+
 .resetButton:hover {
     background-color: lightslategray;
+    color: white;
+}
+
+.cancelButton:hover {
+    background-color: lightcoral;
     color: white;
 }
 
