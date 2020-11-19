@@ -8,7 +8,9 @@ class AddressBookData {
         if (nameRegex.test(name)) {
             this._name = name;
         }
-        else throw 'Name is incorrect!';
+        else {
+            throw 'Name is incorrect!';
+        }
     }
 
     get phoneNumber() {
@@ -34,6 +36,93 @@ class AddressBookData {
         }
         else throw 'Address is incorrect!';
     }
+
+    get city() {
+        return this._city;
+    }
+
+    set city(city) {
+        this._city = city;
+    }
+
+    get state() {
+        return this._state;
+    }
+
+    set state(state) {
+        this._state = state;
+    }
+
+    get zip() {
+        return this._zip;
+    }
+
+    set zip(zip) {
+        this._zip = zip;
+    }
+
+    toString() {
+        return "Name : " + this._name + ", Phone Number : " + this._phoneNumber + ", Address : " + this._address + ", City : " + this._city
+            + ", State : " + this._state + ", Zip : " + this._zip;
+    }
+}
+
+const save = () => {
+    try {
+        setAddressBookObject();
+        resetForm();
+    } catch (e) {
+        alert("Oops!!! There's an error ======> " + e);
+        alert("Please correct the details & try again...!!!");
+        return;
+    }
+}
+
+const setAddressBookObject = () => {
+    let addressBookObj = new AddressBookData();
+
+    addressBookObj.name = getInputValueById('#name');
+    addressBookObj.phoneNumber = getInputValueById('#phoneNumber');
+    addressBookObj.address = getInputValueById('#address');
+    addressBookObj.city = getInputValueById('#city');
+    addressBookObj.state = getInputValueById('#state');
+    addressBookObj.zip = getInputValueById('#zipCode');
+
+    alert("Object added successfully -----> " + addressBookObj.toString());
+}
+
+const getInputValueById = (id) => {
+    let value = document.querySelector(id).value;
+    return value;
+}
+
+const resetForm = () => {
+    setValue('#name', '');
+    setValue('#phoneNumber', '');
+    setValue('#address', '');
+    setValue('#city', '');
+    setValue('#state', '');
+    setValue('#zipCode', '');
+
+    const textError = document.querySelector('.text-error');
+    const textErrorNew = document.querySelector('.text-error-new');
+    textError.textContent = "";
+    textErrorNew.textContent = "";
+
+    const addressTextError = document.querySelector('.address-text-error');
+    const addressTextErrorNew = document.querySelector('.address-text-error-new');
+    addressTextError.textContent = "";
+    addressTextErrorNew.textContent = "";
+
+    const phoneNumberTextError = document.querySelector('.phoneNumber-text-error');
+    const phoneNumberTextErrorNew = document.querySelector('.phoneNumber-text-error-new');
+    phoneNumberTextError.textContent = "";
+    phoneNumberTextErrorNew.textContent = "";
+}
+
+const setValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.value = value;
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
