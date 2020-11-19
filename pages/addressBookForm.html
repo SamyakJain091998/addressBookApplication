@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>Address Book</title>
     <link rel="stylesheet" href="../css/addressBookForm.css" />
+    <script src="../js/addressBookForm.js" defer></script>
 </head>
 
 <body>
@@ -29,16 +30,22 @@
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
                 <input class="input" type="text" id="name" name="name" placeholder="Your full name..." required>
+                <error-output class="text-error" for="text"></error-output>
+                <error-output class="text-error-new" for="text"></error-output>
             </div>
             <div class="row-content">
                 <label class="label text" for="phoneNumber">Phone Number</label>
                 <input class="input" type="number" id="phoneNumber" name="phoneNumber"
                     placeholder="Your Phone Number..." required>
+                <phoneNumber-error-output class="phoneNumber-text-error" for="text"></phoneNumber-error-output>
+                <phoneNumber-error-output class="phoneNumber-text-error-new" for="text"></phoneNumber-error-output>
             </div>
             <div class="row-content">
-                <label class="label text" for="notes">Address</label>
-                <textarea id="notes" class="input" name="Notes" placeholder="Your complete address..."
+                <label class="label text" for="address">Address</label>
+                <textarea id="address" class="input" name="address" placeholder="Your complete address..."
                     style="height:100px"></textarea>
+                <address-error-output class="address-text-error" for="text"></address-error-output>
+                <address-error-output class="address-text-error-new" for="text"></address-error-output>
             </div>
             <div class="row-content">
                 <div class="inlineContent">
