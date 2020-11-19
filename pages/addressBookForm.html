@@ -43,7 +43,7 @@
             <div class="row-content">
                 <label class="label text" for="address">Address</label>
                 <textarea id="address" class="input" name="address" placeholder="Your complete address..."
-                    style="height:100px"></textarea>
+                    style="height:100px" required></textarea>
                 <address-error-output class="address-text-error" for="text"></address-error-output>
                 <address-error-output class="address-text-error-new" for="text"></address-error-output>
             </div>
@@ -57,14 +57,14 @@
                 </div>
 
                 <div id="cityAndState">
-                    <select id="city" name="City">
+                    <select id="city" name="City" required>
                         <option value="" disabled selected>Select city</option>
                         <option value="Mumbai">Mumbai</option>
                         <option value="Pune">Pune</option>
                         <option value="Bangalore">Bangalore</option>
                         <option value="Bangalore">Indore</option>
                     </select>
-                    <select id="state" name="State">
+                    <select id="state" name="State" required>
                         <option value="" disabled selected>Select state</option>
                         <option value="Maharashtra">Maharashtra</option>
                         <option value="Karnataka">Karnataka</option>
