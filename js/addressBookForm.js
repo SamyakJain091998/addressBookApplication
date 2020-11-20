@@ -109,6 +109,11 @@ const getInputValueById = (id) => {
     return value;
 }
 
+const setValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.value = value;
+}
+
 const resetForm = () => {
     setValue('#name', '');
     setValue('#phoneNumber', '');
@@ -133,10 +138,7 @@ const resetForm = () => {
     phoneNumberTextErrorNew.textContent = "";
 }
 
-const setValue = (id, value) => {
-    const element = document.querySelector(id);
-    element.value = value;
-}
+//-------EVENT LISTENERS---------
 
 window.addEventListener('DOMContentLoaded', (event) => {
 
