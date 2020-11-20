@@ -72,6 +72,7 @@ const save = () => {
         let addressBookData = createaAddressBook();
         createAndUpdateStorage(addressBookData);
         resetForm();
+        window.location = "../pages/addressBookHome.html";
     } catch (e) {
         alert("Oops!!! There's an error ======> " + e);
         alert("Please correct the details & try again...!!!");

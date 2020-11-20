@@ -35,7 +35,7 @@ body{
     border: solid 0px #42515f;
 }
 
-.emp-text{
+.address-text{
     text-align: left;
     font: normal normal bold 22px/25px Montserrat;
     font-family: "Montserrat", sans-serif;
@@ -44,7 +44,7 @@ body{
     text-transform: uppercase;
 }
 
-.emp-payroll{
+.address-detail-text{
     color: #42515F;
 }
 
