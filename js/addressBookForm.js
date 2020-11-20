@@ -1,4 +1,13 @@
 class AddressBookData {
+
+    get id() {
+        return this._id;
+    }
+
+    set id(id) {
+        this._id = id;
+    }
+
     get name() {
         return this._name;
     }
@@ -83,14 +92,14 @@ const save = () => {
 const createaAddressBook = () => {
     let addressBookData = new AddressBookData();
 
+    addressBookData.id = createNewAddressId();
     addressBookData.name = getInputValueById('#name');
     addressBookData.phoneNumber = getInputValueById('#phoneNumber');
     addressBookData.address = getInputValueById('#address');
     addressBookData.city = getInputValueById('#city');
     addressBookData.state = getInputValueById('#state');
     addressBookData.zip = getInputValueById('#zipCode');
-
-    alert("Object created successfully -----> " + addressBookData.toString());
+    alert("Object created successfully with id : " + addressBookData._id + " -----> " + addressBookData.toString());
     return addressBookData;
 }
 
@@ -103,6 +112,16 @@ function createAndUpdateStorage(addressBookData) {
     }
     alert("Local Storage Updated Successfully!\nTotal Addresses : " + addressBookList.length);
     localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
+}
+
+const createNewAddressId = () => {
+    let addressID = localStorage.getItem("AddressID");
+    if (addressID == undefined) {
+        addressID = 0;
+    }
+    addressID = !addressID ? 1 : (parseInt(addressID) + 1).toString();
+    localStorage.setItem("AddressID", addressID);
+    return addressID;
 }
 
 const getInputValueById = (id) => {
