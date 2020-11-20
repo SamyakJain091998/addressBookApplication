@@ -58,7 +58,7 @@ html body{
 }
 
 .address-detail-text{
-    color: #42515F;
+    color: #3D3D3D;
 }
 
 .address-book-text{
@@ -67,7 +67,7 @@ html body{
     align-items: center;
     font: normal normal bold 24px/25px Roboto;
     letter-spacing: 0px;
-    color: #42515f;
+    color: #3D3D3D;
     opacity: 1;
 }
 
@@ -128,7 +128,7 @@ th {
     text-align: left;
     font: normal normal medium 18px/24px Roboto;
     letter-spacing: 0px;
-    color: #707d88;
+    color: #3D3D3D;
     text-transform: uppercase;
     opacity: 1;
     border: 0px solid #dddddd;
