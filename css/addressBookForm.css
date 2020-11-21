@@ -252,3 +252,57 @@ phoneNumber-error-output{
     font-style: italic;
     color: green;
 }
+
+
+@media only screen and (max-width: 960px){
+    .emp-text{
+        padding: 20px 20px;
+        margin-right: 100px;
+    }
+    .cancelButton{
+        margin-left: 0px;
+    }
+    .form{
+        width: 85%;
+        padding: 44px 20px;
+    }
+    .logo-content{
+        width: 85%;
+        padding: 44px 20px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .emp-text{
+        padding: 20px 20px;
+        margin-right: 100px;
+    }
+    .logo-content{
+        width: 85%;
+        padding: 44px 20px;
+    }
+    .form{
+        margin-top: 10px;
+    }
+    .row{
+        flex-direction: column;
+    }
+    .addButton{
+        justify-content: flex-start;
+    }
+    .resetButton{
+        width: 100%;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .addButton{
+        margin: 0;
+    }
+    .buttonParent{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
